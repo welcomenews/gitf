@@ -5,7 +5,8 @@ pipeline {
       steps {
         script {
           sh 'cd /home/sergey/jen/'
-          sh 'git clone https://github.com/welcomenews/gitf.git'
+          checkout([$class: 'GitSCM', branches: [[name: '*/master']],
+          userRemoteConfigs: [[url: 'https://github.com/welcomenews/gitf.git']]])
           sh 'ls -l'
         }
       }
