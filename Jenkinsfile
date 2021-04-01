@@ -4,9 +4,9 @@ pipeline {
   stage('Git clone') {
       steps {
         script {
-          cd /home/sergey/jen/
-          git clone https://github.com/welcomenews/gitf.git
-          ls -l
+          sh 'cd /home/sergey/jen/'
+          sh 'git clone https://github.com/welcomenews/gitf.git'
+          sh 'ls -l'
         }
       }
     }
