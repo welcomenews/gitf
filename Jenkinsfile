@@ -18,7 +18,7 @@ pipeline {
       steps {
         sh 'git fetch --all'
         sh 'git checkout -b v0.2-rc1'
-        withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: '470913827_Serg_', usernameVariable: 'welcomenews')]) 
+        withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: '', usernameVariable: 'welcomenews')]) 
             {
                 sh('git push origin v0.2-rc1')         
             }
