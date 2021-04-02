@@ -16,7 +16,7 @@ pipeline {
     }
     stage('New branch') {
       steps {
-          'git checkout –b v0.2-rc1'
+          sh 'git checkout –b v0.2-rc1'
       }
     } 
   }
