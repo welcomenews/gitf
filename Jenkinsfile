@@ -18,7 +18,7 @@ pipeline {
       steps {
         sh 'git fetch --all'
         //sh 'git checkout -b v0.2-rc1'
-        sh 'git push origin v0.2-rc1'
+        sh 'git push origin HEAD'
       }
     } 
   }
