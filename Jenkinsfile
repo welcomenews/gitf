@@ -16,10 +16,10 @@ pipeline {
     }
     stage('New branch') {
       steps {
-        git url: "https://github.com/welcomenews/gitf.git",
-        credentialsId: 'welcomenews', passwordVariable: '470913827_Serg_',
-        branch: v0.2-rc1
-        
+        sh 'git checkout v0.2-rc1'
+        //git url: "https://github.com/welcomenews/gitf.git",
+        //credentialsId: 'welcomenews', passwordVariable: '470913827_Serg_',
+        //branch: v0.2-rc
       }
     } 
   }
