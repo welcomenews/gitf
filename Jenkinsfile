@@ -22,6 +22,7 @@ pipeline {
        // withCredentials([usernamePassword()]) 
          //   {
                 sh 'git push origin v0.2-rc1'
+
            // }
        // sh 'git push -u origin v0.2-rc1'
       }
