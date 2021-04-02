@@ -17,8 +17,8 @@ pipeline {
     stage('New branch') {
       steps {
         sh 'git fetch --all'
-        //sh 'git checkout -b v0.2-rc1'
-        sh 'git push origin HEAD'
+        sh 'git checkout -b v0.2-rc1'
+        sh 'git push -u origin v0.2-rc1'
       }
     } 
   }
