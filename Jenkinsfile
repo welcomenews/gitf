@@ -16,12 +16,13 @@ pipeline {
     }
     stage('New branch') {
       steps {
+        git url: "https://github.com/welcomenews/gitf.git",  credentialsId: "gitpass"
         sh 'git fetch --all'
         sh 'git checkout -b v0.2-rc1'
-        withCredentials([usernamePassword(credentialsId: 'gitpass')]) 
-            {
-                sh('git push origin v0.2-rc1')         
-            }
+       // withCredentials([usernamePassword()]) 
+         //   {
+                sh 'git push origin v0.2-rc1'
+           // }
        // sh 'git push -u origin v0.2-rc1'
       }
     } 
