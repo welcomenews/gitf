@@ -19,11 +19,11 @@ pipeline {
 //        git url: "https://github.com/welcomenews/gitf.git",  credentialsId: "gitpass"
         sh 'git fetch --all'
         sh 'git checkout -b v0.2-rc1'
-       // withCredentials([usernamePassword()]) 
-         //   {
-         sh 'git push origin v0.2-rc1'
-
-           // }
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'gitpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+             sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO>')
+         //sh 'git push origin v0.2-rc1'
+        }
+       
        // sh 'git push -u origin v0.2-rc1'
       }
     } 
