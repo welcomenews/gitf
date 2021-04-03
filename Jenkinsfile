@@ -20,7 +20,7 @@ pipeline {
         sh 'git fetch --all'
         sh 'git checkout -b v0.2-rc1'
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'gitpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-             sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO>')
+             sh('git push https://github.com/welcomenews/gitf.git')
          //sh 'git push origin v0.2-rc1'
         }
        
